@@ -15,4 +15,4 @@ def index(request):
 	#template = loader.get_template('tasks/index.html')
 	#return HttpResponse(template.render(context))
 	
-def detail(request):
+#def detail(request):
