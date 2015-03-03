@@ -1,7 +1,26 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'admin/css/base.css' %}" />
+
+<h1>Tasks</h1>
 {% if todo_list %}
-    <ul>
+    <table>
+		<tr>
+			<th>Class</th>
+			<th>Task</th>
+			<th>Description</th>
+			<th>Due Date</th>
+			<th>Estimated Hours to Complete</th>
+			<th>Actual Hours to Complete</th>
+		<tr>
     {% for asnmt in todo_list %}
-        <li><a href="/tasks/{{ asnmt.id }}/">{{ asnmt.task }}</a>, {{asnmt.dueDate}}</li>
+        <tr>
+			<td>{{ asnmt.course }}</td>
+			<td>{{ asnmt.task }}</td>
+			<td>{{asnmt.desc}}</td>
+			<td>{{asnmt.dueDate}}</td>
+			<td>{{asnmt.estHrsToComplete}}</td>
+			<td>{{asnmt.actHrsToComplete}}</td>
+		</tr>
     {% endfor %}
     </ul>
 {% else %}
